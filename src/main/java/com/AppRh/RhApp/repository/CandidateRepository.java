@@ -1,5 +1,17 @@
 package com.AppRh.RhApp.repository;
 
-public interface CandidateRepository {
-    
+import java.util.List;
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.CrudRepository;
+import com.AppRh.RhApp.models.Candidate;
+import com.AppRh.RhApp.models.Vaga;
+public interface CandidateRepository extends CrudRepository<Candidate, String>{
+
+    Iterable<Candidate> findByVaga(Vaga vaga);
+
+    Candidate findById(long id);
+
+    Candidate findByRg(String rg);
+
+    List<Candidate> findByNameCandidate(String nome);
 }

@@ -6,6 +6,6 @@ import org.springframework.data.repository.CrudRepository;
 import com.AppRh.RhApp.models.Vaga;
 
 public interface VagaRepository extends CrudRepository<Vaga, String>{
-    Vaga findByCodigo(long id);
+    Vaga findByCodigo(long codigo);
     List<Vaga> findByNome(String nome);
 }
