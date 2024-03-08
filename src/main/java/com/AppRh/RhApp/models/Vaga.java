@@ -15,8 +15,9 @@ import jakarta.validation.constraints.NotEmpty;
 public class Vaga implements Serializable{
     private static final Long serialVersionUID = 1L;
 
+
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long codigo;
 
     @NotEmpty

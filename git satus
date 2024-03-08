@@ -1,0 +1,35 @@
+[33mcommit df9a682d619dbbc705628d6bd9330404827c68ff[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m)[m
+Author: Eduardo-Rocha-Azevedo <eduazevedo5414@gmail.com>
+Date:   Fri Mar 8 11:59:51 2024 -0300
+
+    integration with thymeleaf
+
+[33mcommit 007929dfadbde50077a8b2095099e45b6293650d[m
+Author: Eduardo-Rocha-Azevedo <eduazevedo5414@gmail.com>
+Date:   Thu Mar 7 23:47:38 2024 -0300
+
+    controller construction
+
+[33mcommit 57e00280996bf3cbbee87585560ace2ddf4d1ec6[m
+Author: Eduardo-Rocha-Azevedo <eduazevedo5414@gmail.com>
+Date:   Thu Mar 7 23:46:18 2024 -0300
+
+    front-end
+
+[33mcommit d7cba7e1a32cc52c3103d01b025309c27d557200[m
+Author: Eduardo-Rocha-Azevedo <eduazevedo5414@gmail.com>
+Date:   Thu Mar 7 23:43:01 2024 -0300
+
+    controller construction
+
+[33mcommit a9a900de7dd7a9471328db28763888089991c32c[m
+Author: Eduardo-Rocha-Azevedo <eduazevedo5414@gmail.com>
+Date:   Wed Feb 21 11:45:56 2024 -0300
+
+    Controllers
+
+[33mcommit cb64f157f590951ed3b9fdd3d9245c8019e46a96[m
+Author: Eduardo-Rocha-Azevedo <eduazevedo5414@gmail.com>
+Date:   Tue Feb 20 12:11:28 2024 -0300
+
+    first commit

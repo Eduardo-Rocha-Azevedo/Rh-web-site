@@ -19,8 +19,10 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 public class VagaController {
-    
+    @Autowired
     private VagaRepository vRepository;
+
+    @Autowired
     private CandidateRepository cRepository;
 
     //? REGISTER VACANCY
