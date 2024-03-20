@@ -10,4 +10,4 @@
   <li>5º <a href="http://localhost:8080/">Acesse aqui</a></li>
 </ul>
 
-Obs.: O projeto não funciona se não existir um banco (vazio) chamado AppRH no MySQL.
+Obs.: O projeto não funciona se não existir um banco (vazio) chamado apprH no MySQL.
