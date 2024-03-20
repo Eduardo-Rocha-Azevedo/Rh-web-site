@@ -34,7 +34,7 @@ public class VagaController {
 	public String form(@Valid Vaga vaga, BindingResult result, RedirectAttributes attributes) {
 
 		if (result.hasErrors()) {
-			attributes.addFlashAttribute("mensagem", "Verifique os campos...");
+			attributes.addFlashAttribute("mensagem_erro", "Verifique os campos...");
 			return "redirect:/cadastrarVaga";
 		}
 
@@ -81,7 +81,7 @@ public class VagaController {
 			BindingResult result, RedirectAttributes attributes) {
 
 		if (result.hasErrors()) {
-			attributes.addFlashAttribute("mensagem", "Verifique os campos");
+			attributes.addFlashAttribute("mensagem-erro", "Verifique os campos");
 			return "redirect:/{codigo}";
 		}
 
