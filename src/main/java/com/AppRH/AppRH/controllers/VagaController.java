@@ -91,6 +91,12 @@ public class VagaController {
 			return "redirect:/{codigo}";
 		}
 
+		// Verificar se o RG possui o tamanho correto (por exemplo, 9 dígitos)
+		if (candidato.getRg().length() != 9) {
+			attributes.addFlashAttribute("mensagem_erro", "RG deve ter 9 dígitos");
+			return "redirect:/{codigo}";
+		}
+
 		Vaga vaga = vr.findByCodigo(codigo);
 		candidato.setVaga(vaga);
 		cr.save(candidato);

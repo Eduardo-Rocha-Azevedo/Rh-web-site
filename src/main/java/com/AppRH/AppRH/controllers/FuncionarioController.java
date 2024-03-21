@@ -7,6 +7,7 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
@@ -72,9 +73,15 @@ public class FuncionarioController {
             attributes.addFlashAttribute("mensagem_erro", "Verifique os campos...");
             return "redirect:/dependentes/{id}";
         }
-        
+        // Verifica se o CPF já está cadastrado
         if(dr.findByCpf(dependentes.getCpf()) != null){
             attributes.addFlashAttribute("mensagem_erro", "CPF já cadastrado!");
+            return "redirect:/dependentes/{id}";
+        }
+
+        // Verica o CPF se tem o tamnho correto
+        if(dependentes.getCpf().length() != 11){
+            attributes.addFlashAttribute("mensagem_erro", "CPF inválido, deve ter 11 dígitos!");
             return "redirect:/dependentes/{id}";
         }
 
@@ -96,8 +103,8 @@ public class FuncionarioController {
 
     // Editar funcionario
     // form
-    @RequestMapping(value = "/update-funcionario", method = RequestMethod.GET)
-    public ModelAndView editarFuncionario(long id){
+    @RequestMapping(value = "/editar-funcionario", method = RequestMethod.GET)
+    public ModelAndView editarFuncionario(@RequestParam("id") Long id){
 
         Funcionario funcionario = fr.findById(id);
         ModelAndView mv = new ModelAndView("funcionario/update-funcionario");

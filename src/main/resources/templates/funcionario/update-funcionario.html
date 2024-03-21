@@ -37,7 +37,7 @@
 						<li class="nav-item"><a class="nav-link active" aria-current="page" href="/">Home</a></li>
                         <li class="nav-item"><a class="nav-link" href="/funcionarios">Funcionários</a></li>
 						<li class="nav-item"><a class="nav-link" href="/cadastrarFuncionario">Cadastrar Funcionário</a>
-						<li class="nav-item"><a class="nav-link" href="/vagas">Lista de Vagas</a></li>
+						<li class="nav-item"><a class="nav-link" href="/vagas">Vagas</a></li>
 						<li class="nav-item"><a class="nav-link" href="/cadastrarVaga">Cadastrar Vaga</a></li>
 
 					</ul>
@@ -70,7 +70,7 @@
 				<div class="col">
 					<div class="form-group">
 						<label for=""><b>Data de nascimento:</b></label> <input type="date" class="form-control"
-							value="" name="data" required /><small class="form-text text-muted"><i>* Data de
+							value="" name="data" required  th:attr="value=${funcionario.data}"/><small class="form-text text-muted"><i>* Data de
 								nascimento.</i></small>
 					</div>
 				</div>
@@ -78,17 +78,14 @@
 
 					<div class="form-group">
 						<label for=""><b>E-mail:</b></label><input type="text" class="form-control" value=""
-							name="email" required /><small class="form-text text-muted"><i>* email@email.com</i></small>
+							name="email" required  th:attr="value=${funcionario.email}"/><small class="form-text text-muted"><i>* email@email.com</i></small>
 					</div>
 
 				</div>
 			</div>
 
 
-
-
-			<button type="submit" class="btn btn-success">Atualizar
-				Funcionário</button>
+			<button type="submit" class="btn btn-success">Atualizar Funcionário</button>
 		</form>
 	</div>
 

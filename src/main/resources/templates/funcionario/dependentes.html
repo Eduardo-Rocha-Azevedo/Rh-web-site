@@ -41,7 +41,7 @@
 						<li class="nav-item"><a class="nav-link active" aria-current="page" href="/">Home</a></li>
                         <li class="nav-item"><a class="nav-link" href="/funcionarios">Funcionários</a></li>
 						<li class="nav-item"><a class="nav-link" href="/cadastrarFuncionario">Cadastrar Funcionário</a>
-						<li class="nav-item"><a class="nav-link" href="/vagas">Lista de Vagas</a></li>
+						<li class="nav-item"><a class="nav-link" href="/vagas">Vagas</a></li>
 						<li class="nav-item"><a class="nav-link" href="/cadastrarVaga">Cadastrar Vaga</a></li>
 
 					</ul>
@@ -69,12 +69,12 @@
 			</p>
 
 
-			<br> <br>
-
-			<h2>Cadastrar dependentes</h2>
 			<th:block th:include = "mensagemValidacao"></th:block>
 
-			<form method="post">
+			<h2>Cadastrar dependentes</h2>
+			
+
+			<form method="post" th:object="${dependente}">
 
 				<div class="form-group">
 					<div class="row">
@@ -97,7 +97,7 @@
 
 							<div class="form-group">
 								<label for=""><b>Data de nascimento:</b></label> <input type="date" value=""
-									name="datanascimento" class="form-control" required /> <small
+									name="dataNascimento" class="form-control" required /> <small
 									class="form-text text-muted"><i>*
 										Dia/Mês/Ano.</i></small>
 							</div>
@@ -109,8 +109,6 @@
 			</form>
 
 		</div>
-
-		<br> <br>
 
 		<h2>Dependentes:</h2>
 
@@ -125,12 +123,12 @@
 				</tr>
 			</thead>
 			<tbody>
-				<tr>
-					<td><span></span></td>
-					<td><span></span></td>
-					<td><span></span></td>
-					<td><a class="waves-effect waves-light btn-small" href=""><button type="button"
-								class="btn btn-danger">Excluir</button></a></td>
+				<tr th:each="dependente : ${dependentes}">
+					<td><span th:text="${dependente.nome}"></span></td>
+					<td><span th:text="${dependente.cpf}"></span></td>
+					<td><span th:text="${dependente.dataNascimento}"></span></td>
+					<td><a class="waves-effect waves-light btn-small" th:href="${(#mvc.url('FC#deletarDependente').arg(0,dependente.cpf)).build()}"><button type="button"
+								class="btn btn-danger" >Excluir</button></a></td>
 
 
 				</tr>
