@@ -8,12 +8,16 @@ import com.AppRH.AppRH.models.Candidato;
 import com.AppRH.AppRH.models.Vaga;
 
 public interface CandidatoRepository extends CrudRepository<Candidato, String> {
-	
-	Iterable<Candidato>findByVaga(Vaga vaga);
-	
+
+	Iterable<Candidato> findByVaga(Vaga vaga);
+
 	Candidato findByRg(String rg);
-	
+
 	Candidato findById(long id);
-	
-	List<Candidato>findByNomeCandidato(String nomeCandidato);
+
+	// List<Candidato>findByNomeCandidato(String nomeCandidato);
+
+	// para a busca
+	@Query(value = "select u from Candidato u where u.nomeCandidato like %?1%")
+	List<Candidato> findByNomesCandidatos(String nomeCandidato);
 }

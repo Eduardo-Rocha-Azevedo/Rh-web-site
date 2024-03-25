@@ -1,20 +1,28 @@
 package com.AppRH.AppRH.repository;
 
-import org.springframework.data.repository.CrudRepository;
-import java.lang.Iterable;
-import com.AppRH.AppRH.models.Dependentes;
-import com.AppRH.AppRH.models.Funcionario;
 import java.util.List;
 
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.CrudRepository;
 
-public interface DependentesRepository extends CrudRepository<Dependentes, String>{
-    
-    Iterable <Dependentes> findByFuncionario(Funcionario funcionario);
+import com.AppRH.AppRH.models.Dependentes;
+import com.AppRH.AppRH.models.Funcionario;
+import com.AppRH.AppRH.models.Vaga;
 
-    Dependentes findByCpf(String cpf);
+public interface DependentesRepository extends CrudRepository<Dependentes, String> {
 
-    Dependentes findById(long id);
+	Iterable<Dependentes> findByFuncionario(Funcionario funcionario);
 
-    List<Dependentes> findByNome(String nome);
+	// pensando no método delete
+	Dependentes findByCpf(String cpf);
+
+	Dependentes findById(long id);
+
+	// criado para implementar
+	List<Dependentes> findByNome(String nome);
+
+	// para a busca
+	@Query(value = "select u from Dependentes u where u.nome like %?1%")
+	List<Dependentes> findByNomesDependentes(String nome);
 
 }

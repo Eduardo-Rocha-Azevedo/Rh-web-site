@@ -11,6 +11,10 @@
 
 	<!-- Bootstrap -->
 	<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+	<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+	integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+	crossorigin="anonymous">
 
 	<!-- HTML5 shim e Respond.js para suporte no IE8 de elementos HTML5 e media queries -->
 	<!-- ALERTA: Respond.js não funciona se você visualizar uma página file:// -->
@@ -22,7 +26,6 @@
 </head>
 
 <body>
-
 
 
 	<header>
@@ -41,6 +44,7 @@
 						<li class="nav-item"><a class="nav-link" href="/cadastrarFuncionario">Cadastrar Funcionário</a>
 						<li class="nav-item"><a class="nav-link" href="/vagas">Vagas</a></li>
 						<li class="nav-item"><a class="nav-link" href="/cadastrarVaga">Cadastrar Vaga</a></li>
+						<li class="nav-item"><a class="nav-link" href="/logout">Sair</a></li>
 
 					</ul>
 				</div>
@@ -71,24 +75,27 @@
 			<tbody>
 				<tr th:each="vaga: ${vagas}">
 					<td><a th:href="${(#mvc.url('VC#detalhesVaga').arg(0, vaga.codigo)).build()}">
-					<span th:text="${vaga.nome}"></span></a></td>
+							<span th:text="${vaga.nome}"></span></a></td>
 					<td><span th:text="${vaga.descricao}"></span></td>
 					<td>R$ <span th:text="${vaga.salario}"></span></td>
 					<td><span th:text="${vaga.data}"></span></td>
-					<td><a th:href="${(#mvc.url('VC#deletarVaga').arg(0, vaga.codigo)).build()}"><button type="button" class="btn btn-danger">Excluir</button></a></td>
-					<td><a th:href="${(#mvc.url('VC#editarVaga').arg(0, vaga.codigo)).build()}"><button type="button" class="btn btn-primary">Editar</button></a></td>
-					<td><a th:href="${(#mvc.url('VC#detalhesVaga').arg(0, vaga.codigo)).build()}"><button type="button" class="btn btn-success">Adicionar candidato</button></a></td>
+					<td><a th:href="${(#mvc.url('VC#deletarVaga').arg(0, vaga.codigo)).build()}"><button type="button"
+								class="btn btn-danger">Excluir</button></a></td>
+					<td><a th:href="${(#mvc.url('VC#editarVaga').arg(0, vaga.codigo)).build()}"><button type="button"
+								class="btn btn-primary">Editar</button></a></td>
+					<td><a th:href="${(#mvc.url('VC#detalhesVaga').arg(0, vaga.codigo)).build()}"><button type="button"
+								class="btn btn-success">Adicionar candidato</button></a></td>
 				</tr>
 			</tbody>
 		</table>
 
 
 		<div style="height: 100px;"></div>
-
 		<div class="footer-copyright fixed-bottom bg-dark text-center py-3">
 			<span class="text-light align-middle">| App RH | - ©
 				2024 Copyright: Eduardo Azevedo</span>
 		</div>
+
 
 
 		<!--JavaScript bootstrap-->
@@ -96,7 +103,7 @@
 		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
 			integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous">
 
-			</script>
+		</script>
 </body>
 
 </html>
